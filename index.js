@@ -20,16 +20,22 @@ class Player {
 			(this.radius = radius),
 			(this.color = color);
 	}
+	/*  
+  - para podermos desenhar o jogador
+  usamos a função draw()
+*/
+	draw() {
+		c.beginPath();
+		c.arc(this.x, this.y, this.radius, Math.PI * 2, false);
+		c.fillStyle = this.color;
+		c.fill();
+	}
 }
 
 /*  iniciamos um jogador 
  com eixo vertical e horizontal de 100,
  raio de 30 e cor azul */
 const player = new Player(100, 100, 30, " blue");
-
+player.draw();
 // lançando no console
 console.log(player);
-
-/*  disto para poder visualizar na tela
- usasse o contexto
-*/
