@@ -20,10 +20,7 @@ class Player {
 			(this.radius = radius),
 			(this.color = color);
 	}
-	/*  
-  - para podermos desenhar o jogador
-  usamos a função draw()
-*/
+
 	draw() {
 		c.beginPath();
 		c.arc(this.x, this.y, this.radius, Math.PI * 2, false);
@@ -32,10 +29,16 @@ class Player {
 	}
 }
 
-/*  iniciamos um jogador 
- com eixo vertical e horizontal de 100,
- raio de 30 e cor azul */
-const player = new Player(100, 100, 30, " blue");
+/*
+ - agora  vamos partir pra colocar no meio da tela o jogador
+ onde para isso vamos pegar a largura total da tela dividir por 2
+ para cada eixo...x e y
+*/
+
+const x = canvas.width / 2;
+const y = canvas.height / 2;
+
+const player = new Player(x, y, 30, " blue");
 player.draw();
-// lançando no console
+
 console.log(player);
